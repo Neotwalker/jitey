@@ -465,13 +465,15 @@ a
 						outline: none
 						border: 2px solid $dark
 						border: none
-						border-left: 2px solid $dark
-						border-right: 2px solid $dark
 						height: 100%
 						text-align: center
 						font-weight: bold
 						font-size: 24px
 					button
+						&:first-child
+							border-right: 2px solid $dark
+						&:last-child
+							border-left: 2px solid $dark
 						font-size: 24px
 						width: 50px
 						padding: 0
