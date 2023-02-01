@@ -1,0 +1,430 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.logo
+		img
+			max-width: 150px
+	.menu
+		.list
+			li
+				font-size: 18px
+	.social
+		a
+			font-size: 20px
+	.purchase
+		&--wrapper
+			.order
+				.images
+					flex-wrap: wrap
+					img
+						&:first-child
+							max-width: calc(40% - 20px)
+						&:last-child
+							max-width: calc(60% - 20px)
+				form
+					.row1
+						gap: 10%
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.header
+		&--wrapper
+			.burger
+				display: block
+			.menu
+				display: none
+				position: absolute
+				background-color: $white
+				width: 40vw
+				height: 100vh
+				top: 89px
+				right: 0
+				z-index: 999999
+				.list
+					flex-direction: column
+					padding: 40px
+	section
+		p
+			font-size: 20px
+	.button
+		font-size: 24px
+	.title
+		&--wrapper
+			.texts
+				.h1
+					font-size: 5rem
+	.composition
+		&--wrapper
+			.item
+				gap: 10%
+				p
+					font-size: 20px
+					max-width: 350px
+				.image
+					max-width: 40%
+		&--info
+			.texts
+				li
+					font-size: 20px
+	.developers
+		.scientists
+			.scientist
+				.image
+					min-height: 230px
+	.purchase
+		&--wrapper
+			.texts
+				max-width: 60%
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.row
+		margin-left: 0
+		margin-right: 0
+	section
+		.h2
+			font-size: 32px
+			margin-bottom: 30px
+	.header
+		&--wrapper
+			.menu
+				max-width: 300px
+				width: 100%
+	.title
+		margin-bottom: 30px
+		&--wrapper
+			.image
+				min-width: 300px
+	.info
+		.h2
+			font-size: 32px
+			margin-bottom: 20px
+		.text
+			margin-bottom: 30px
+			p
+				font-size: 20px
+		.h3
+			font-size: 24px
+			margin-bottom: 30px
+	.composition
+		padding: 30px 0
+		margin-bottom: 30px
+		&--wrapper
+			.item
+				gap: 5%
+				align-items: flex-start
+				p
+					font-size: 18px
+				&:last-child
+					p
+						margin-top: 0
+						max-width: 400px
+		&--info
+			.order
+				.capsule
+					font-size: 20px
+				.cost
+					font-size: 24px
+	.developers
+		margin-bottom: 30px
+		.subtitle
+			font-size: 20px
+			margin-bottom: 30px
+		.scientists
+			.scientist
+				gap: 20px
+				&--info
+					p
+						line-height: 19px
+						font-size: 16px
+						margin-bottom: 20px
+	.documents
+		margin-bottom: 30px
+		padding: 30px 0
+		.h2
+			margin-bottom: 30px
+		.list
+			.item
+				max-width: calc(33% - 20px)
+				p
+					font-size: 16px
+					line-height: 19px
+					max-width: 100%
+	.purchase
+		margin-bottom: 30px
+		&--wrapper
+			.texts
+				max-width: 50%
+				.h3
+					font-size: 20px
+				p
+					font-size: 16px
+			.order
+				.images
+					margin-bottom: 30px
+				span
+					font-size: 20px
+				form
+					text-align: left
+					.row1
+						margin-bottom: 20px
+						.wrapper
+							.total1
+								margin-top: 10px
+						.total
+							font-size: 24px
+							margin-top: 10px
+							*
+								font-size: 24px
+	.footer
+		padding: 30px 0
+		&--top
+			margin-bottom: 30px
+		&--bottom
+			flex-wrap: wrap
+		&--info
+			max-width: 100%
+			width: 100%
+			margin-top: 20px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 580px)
+	.title--wrapper .image
+		min-width: 200px
+	.h2
+		font-size: 24px !important
+	p, li
+		font-size: 16px !important
+	.button
+		font-size: 20px
+	.composition--wrapper
+		.item
+			.image
+				max-width: 50%
+			p
+				max-width: 50%
+			&:last-child
+				gap: 20px
+				p
+					max-width: 60%
+				.image
+					max-width: 50%
+	.developers
+		.scientists
+			.scientist .image
+				min-height: 180px
+	.purchase--wrapper
+		.order
+			form
+				.input__field input
+					max-width: 100px
+				.row1
+					flex-direction: column
+			.images
+				flex-direction: column
+				img
+					max-width: 100% !important
+
+@media only screen and (max-width : 480px)
+	.social
+		a
+			font-size: 16px
+	.info
+		.h3
+			font-size: 20px
+	.logo
+		img
+			&:first-child
+				max-width: 40px
+			&:last-child
+				max-width: 120px
+	.header
+		&--wrapper
+			.menu
+				top: 85px
+				width: 100vw
+	.title
+		&--wrapper
+			flex-direction: column
+			align-items: center
+			.texts
+				max-width: 100%
+				p
+					font-size: 24px !important
+					margin-bottom: 30px
+			.image
+				min-width: initial
+				max-width: 80%
+	.composition
+		.h2
+			margin-bottom: 30px
+		&--wrapper
+			.item
+				flex-direction: column
+				align-items: center
+				gap: 20px
+				&:nth-child(2n)
+					flex-direction: column
+				p, .image
+					max-width: 100%
+				&:last-child
+					p
+						max-width: 100%
+					.image
+						max-width: 80%
+		&--info
+			flex-direction: column
+			.texts
+				li
+					font-size: 16px !important
+				.h3
+					margin-bottom: 30px
+			.order
+				flex-wrap: wrap
+				flex-direction: initial
+	.developers
+		.scientists
+			gap: 30px
+			.scientist
+				&--info
+					font-size: 20px
+					flex: 1 1 calc(50% - 20px)
+				flex-direction: column
+				align-items: center
+				.image
+					min-height: 300px
+					img
+						min-height: 300px
+						object-fit: cover
+	.documents
+		.list
+			flex-direction: column
+			.item
+				max-width: 100%
+				align-items: center
+				display: flex
+				flex-direction: column
+	.purchase
+		&--wrapper
+			flex-direction: column
+			.texts
+				max-width: 100%
+			.order
+				.images
+					flex-direction: inherit
+					justify-content: space-between
+					flex-wrap: nowrap
+					img
+						max-width: 50% !important
+				form
+					display: flex
+					justify-content: space-between
+					align-items: flex-start
+					flex-wrap: wrap
+					gap: 20px
+					.row1
+						margin-bottom: 0
+						.total
+							text-align: center
+							display: block
+							width: 100%
+	.footer
+		&--top .social
+			align-items: flex-end
+			.mail
+				font-size: 16px
+		&--bottom
+			gap: 20px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px)
+	.header
+		&--wrapper
+			justify-content: space-between
+			.social
+				display: none
+			.menu
+				max-width: 100%
+				.list
+					padding: 30px
+					text-align: center
+					li
+						font-size: 24px !important
+						.phone
+							display: block
+							font-weight: 700
+	.developers
+		.scientists
+			.scientist
+				flex-direction: column
+				align-items: center
+				.image
+					min-height: 300px
+					img
+						min-height: 300px
+						object-fit: cover
+	.purchase
+		&--wrapper
+			.order
+				form
+					flex-direction: column
+					gap: 20px
+					.input__field
+						input
+							max-width: 60px
+					.row1
+						max-width: 100%
+						flex-direction: row
+						width: 100%
+						.total
+							text-align: left
+	.footer
+		&--top
+			flex-direction: column
+			gap: 20px
+			.social
+				align-items: flex-start
+		&--bottom
+			gap: 20px
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	.title
+		height: fit-content
+		padding: 20px 0
+	.purchase--wrapper .order .images
+		flex-wrap: wrap
+		justify-content: center
+		img
+			width: fit-content
+			max-width: 100% !important
+	.info
+		&--list
+			.item
+				flex-wrap: wrap
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

@@ -1,0 +1,532 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+	background-color: $white
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	font-family: $default-font
+	overflow-x: hidden
+	&.overlay
+		overflow: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: $white
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	line-height: 1.4
+
+.logo
+	display: flex
+	align-items: center
+	img
+		max-width: 203px
+		height: auto
+
+img
+	max-width: 100%
+	height: auto
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: center
+
+section
+	.h2
+		font-size: 40px
+		margin-bottom: 40px
+	p
+		font-size: 24px
+
+video, iframe
+	max-width: 100%
+	width: 100%
+	height: 100%
+	object-fit: cover
+
+ul, li, a
+	list-style-type: none
+	text-decoration: none
+	text-transform: initial
+
+a
+	color: $dark
+	&:hover
+		color: $dark
+		text-decoration: none
+		opacity: 0.7
+
+.button
+	display: inline-block
+	border: none
+	color: $white
+	text-decoration: none
+	background-color: $accent
+	padding: 15px 45px
+	font-size: 32px
+	text-transform: initial
+	font-weight: 700
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&:focus, &:hover
+		text-decoration: none
+		color: $white
+	&:hover
+		background-color: lighten($accent, 5%)
+	&:active
+		background-color: darken($accent, 5%)
+
+.main
+	&--wrapper
+		position: relative
+		display: flex
+		flex-direction: column
+		height: 100%
+		.content
+			flex: 1 0 auto
+
+.header
+	padding-top: 25px
+	padding-bottom: 25px
+	background-color: $white
+	height: 11vh
+	&--wrapper
+		display: flex
+		align-items: center
+		gap: 20px
+		.social
+			margin-left: auto
+		.burger
+			cursor: pointer
+			display: none
+			height: 30px
+			overflow: hidden
+			position: relative
+			width: 30px
+			&.open
+				span
+					top: 50%
+					transform: translate(-50%) rotate(45deg)
+					&:nth-of-type(2)
+						display: none
+					&:nth-of-type(3)
+						top: 50%
+						transform: translate(-50%) rotate(-45deg)
+			span
+				background-color: #0f0f0f
+				height: 2px
+				left: 50%
+				position: absolute
+				top: 50%
+				-webkit-transform: translate(-50%,-50%)
+				-ms-transform: translate(-50%,-50%)
+				transform: translate(-50%,-50%)
+				-webkit-transition: all .3s ease
+				-o-transition: all .3s ease
+				transition: all .3s ease
+				width: 25px
+				&:nth-of-type(2)
+					top: calc(50% - 6px)
+				&:nth-of-type(3)
+					top: calc(50% + 6px)
+
+.social
+	display: flex
+	align-items: center
+	gap: 25px
+	a
+		white-space: nowrap
+		font-size: 24px
+		font-weight: 700
+
+.menu
+	margin-left: auto
+	.list
+		display: flex
+		gap: 30px
+		justify-content: space-between
+		li
+			white-space: nowrap
+			font-size: 20px
+			transition: all .3s ease
+			.phone
+				display: none
+
+.title
+	height: 89vh
+	display: flex
+	align-items: center
+	background-image: url(../img/bg.png)
+	background-size: cover
+	background-repeat: no-repeat
+	margin-bottom: 60px
+	&--wrapper
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 20px
+		.texts
+			display: flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: flex-start
+			max-width: 380px
+			.h1
+				font-weight: 700
+				margin: 0
+				font-size: 64px
+				margin-bottom: 20px
+			p
+				margin-bottom: 50px
+				font-size: 24px
+				display: flex
+				flex-direction: column
+				strong
+					margin-bottom: 30px
+
+.info
+	margin-bottom: 40px
+	.h2
+		margin-bottom: 40px
+		max-width: 973px
+	.text
+		display: flex
+		flex-direction: column
+		gap: 30px
+		margin-bottom: 40px
+		p
+			font-size: 24px
+	.h3
+		font-size: 36px
+		max-width: 670px
+		line-height: 43px
+		margin-bottom: 60px
+	&--list
+		display: flex
+		flex-direction: column
+		gap: 40px
+		.item
+			display: flex
+			gap: 20px
+			align-items: flex-start
+			p
+				font-size: 20px
+
+.composition
+	padding: 60px 0
+	background-color: #FFF4CE
+	margin-bottom: 60px
+	.h2
+		margin-bottom: 45px
+	&--wrapper
+		display: flex
+		flex-direction: column
+		gap: 30px
+		padding-bottom: 40px
+		border-bottom: 2px solid #D9D9D9
+		margin-bottom: 50px
+		.item
+			display: flex
+			justify-content: space-between
+			gap: 80px
+			&:nth-child(2n)
+				flex-direction: row-reverse
+			&:last-child
+				gap: 60px
+				p
+					max-width: 880px
+					margin-top: 30px
+				.image
+					max-width: 280px
+			p
+				max-width: 70%
+				font-size: 24px
+				line-height: 30px
+			.image
+				max-width: 30%
+				width: 100%
+				img
+					width: 100%
+	&--info
+		display: flex
+		justify-content: space-between
+		gap: 40px
+		.texts
+			.h3
+				margin-bottom: 40px
+			.h3, li
+				font-size: 24px
+			li
+				display: flex
+				gap: 8px
+				margin-bottom: 5px
+				&::before
+					content: ''
+					margin-top: 10px
+					display: block
+					width: 3px
+					height: 3px
+					background-color: $dark
+					border-radius: 50%
+		.order
+			display: flex
+			flex-direction: column
+			gap: 20px
+			text-align: center
+			align-items: center
+			justify-content: center
+			font-weight: bold
+			.wrapper
+				display: flex
+				flex-direction: column
+				gap: 20px
+				.capsule
+					font-size: 24px
+				.cost
+					font-size: 32px
+				img
+					max-height: 220px
+					max-width: 160px
+				.button
+					padding: 15px 28px
+
+.developers
+	margin-bottom: 75px
+	.subtitle
+		margin-bottom: 70px
+		font-size: 24px
+		line-height: 30px
+	.scientists
+		display: flex
+		flex-direction: column
+		gap: 60px
+		.scientist
+			display: flex
+			align-items: flex-start
+			gap: 50px
+			.image
+				flex: 1 1 calc(30% - 50px)
+				max-width: 263px
+				width: 100%
+				min-height: 282px
+				background-color: #D9D9D9
+			&--info
+				flex: 1 1 calc(70% - 50px)
+				font-size: 24px
+				p
+					margin-bottom: 30px
+					line-height: 30px
+					&:last-child
+						margin-bottom: 0
+
+.documents
+	padding: 60px 0
+	background-color: #E7E7E7
+	margin-bottom: 60px
+	.h2
+		margin-bottom: 50px
+	.list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		gap: 20px
+		.item
+			max-width: calc(25% - 20px)
+			width: 100%
+			display: block
+			p
+				font-size: 24px
+				font-weight: bold
+				color: $accent
+				line-height: 30px
+				margin-top: 20px
+				max-width: 290px
+				span
+					display: block
+
+.purchase
+	margin-bottom: 50px
+	&--wrapper
+		display: flex
+		justify-content: space-between
+		gap: 20px
+		.texts
+			max-width: 650px
+			line-height: 30px
+			.h3
+				margin-bottom: 20px
+				font-size: 24px
+			p
+				margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+		.order
+			.images
+				display: flex
+				align-items: flex-start
+				gap: 25px
+				margin-bottom: 65px
+				img
+					max-height: 200px
+			span
+				font-size: 24px
+				font-weight: bold
+				margin-bottom: 25px
+				display: inline-block
+			form
+				text-align: center
+				.total1, .total
+					font-size: 24px
+					font-weight: bold
+					white-space: nowrap
+					span
+						margin: 0
+				.row1
+					display: flex
+					align-items: flex-start
+					gap: 70px
+					margin-bottom: 40px
+					.wrapper
+						display: inline-flex
+						flex-direction: column
+						align-items: center
+						.total1
+							margin-top: 25px
+					.total
+						margin-top: 7px
+						font-size: 32px
+						*
+							font-size: 32px
+				.input__field
+					height: 50px
+					white-space: nowrap
+					box-sizing: border-box
+					display: flex
+					border: 2px solid $dark
+					display: inline-block
+					input
+						max-width: 50px
+						outline: none
+						border: 2px solid $dark
+						border: none
+						border-left: 2px solid $dark
+						border-right: 2px solid $dark
+						height: 100%
+						text-align: center
+						font-weight: bold
+						font-size: 24px
+					button
+						font-size: 24px
+						width: 50px
+						padding: 0
+						height: 100%
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	/* display: none */
+	-webkit-appearance: none
+	margin: 0
+
+input[type='number']
+	-moz-appearance: textfield
+
+.footer
+	background-color: $accent
+	padding: 55px 0
+	a, p
+		text-decoration: none
+		color: $white
+		&.mail
+			font-weight: normal
+			font-size: 20px
+	&--top
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		flex-wrap: wrap
+		margin-bottom: 50px
+		.logo
+			img
+				height: 47px
+		.social
+			display: flex
+			flex-direction: column
+	&--bottom
+		display: flex
+		justify-content: space-between
+		.menu
+			margin-left: 0
+			.list
+				gap: 25px
+				display: flex
+				flex-direction: column
+	&--info
+		text-align: right
+		max-width: 360px
+		font-size: 16px
+		line-height: 20px
+		margin-top: auto
+		p
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+		*
+			display: block
+
+@import "media"
