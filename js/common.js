@@ -60,16 +60,23 @@ $(function() {
 		});
 	}
 
-	$("#menu, #menu1").on("click","a", function (event) {
+	$("#menu").on("click","a", function (event) {
 		event.preventDefault();
 		var id = $(this).attr('href'),
 			top = $(id).offset().top;
-	$('body,html').animate({scrollTop: top}, 1000);
-	if ($(window).width() <= '1000'){
-		$('body').removeClass("overlay");
-		menu.slideToggle('medium').removeClass('active');
-		$('.burger').removeClass('open');
-	}
+		$('body,html').animate({scrollTop: top}, 1000);
+		if ($(window).width() <= '1000'){
+			$('body').removeClass("overlay");
+			menu.slideToggle('medium').removeClass('active');
+			$('.burger').removeClass('open');
+		}
+	});
+
+	$("#menu1").on("click","a", function (event) {
+		event.preventDefault();
+		var id = $(this).attr('href'),
+			top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 1000);
 	});
 
 });
