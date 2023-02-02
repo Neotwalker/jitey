@@ -65,9 +65,11 @@ $(function() {
 		var id = $(this).attr('href'),
 			top = $(id).offset().top;
 	$('body,html').animate({scrollTop: top}, 1000);
-	$('body').toggleClass("overlay");
-	menu.slideToggle('medium').toggleClass('active');
-	$('.burger').toggleClass('open');
+	if ($(window).width() <= '1000'){
+		$('body').removeClass("overlay");
+		menu.slideToggle('medium').removeClass('active');
+		$('.burger').removeClass('open');
+	}
 	});
 
 });
